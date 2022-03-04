@@ -1,0 +1,12 @@
+{
+    "emmet.showSuggestionsAsSnippets": true,
+    "emmet.showExpandedAbbreviation": "always",
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html",
+        "razor": "html",
+        "plaintext": "jade"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

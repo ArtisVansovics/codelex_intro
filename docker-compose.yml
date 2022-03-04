@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  codelexwarmupexercises:
+    image: codelexwarmupexercises
+    build:
+      context: prep-course-warm-up-main
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000

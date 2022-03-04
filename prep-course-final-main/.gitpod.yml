@@ -1,0 +1,8 @@
+vscode:
+  extensions:
+    - esbenp.prettier-vscode
+    - dracula-theme.theme-dracula
+ports:
+  - port: 1234
+    onOpen: open-browser
+    visibility: public
