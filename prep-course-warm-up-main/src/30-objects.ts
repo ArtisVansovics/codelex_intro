@@ -9,7 +9,14 @@ export {};
  *  - https://www.w3schools.com/js/js_objects.asp
  */
 
-const books = [
+ interface ExampleObject {
+  [index: number]: {
+    title: string;
+    author: string;
+  };
+}
+// Using "index signature", as the value consisting of "title" and "author" doesn't have a named key 
+const books: ExampleObject = [
   {
     title: "4 hour work week",
     author: "Tim Ferris"
@@ -20,10 +27,10 @@ const books = [
   }
 ];
 
-const getTheTitles = (obj: {title: string; author: string}) => {
-  let result = "";
-  for (let i = 0; i < 2; i++) {
-    result += obj.title;
+const getTheTitles = (obj: ExampleObject) => {
+  let result: string[] = [];
+  for (let i = 0; i < Object.keys(obj).length; i++) { // Object.keys returns an array of property names
+    result.push(obj[i].title);
   }
   return result;
 };

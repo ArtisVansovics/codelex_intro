@@ -8,7 +8,10 @@ export {};
  */
 
 // You are allowed to edit only this function
-function remove(arr, valueToRemove) {}
+function remove(arr: number[] | string[] | any, valueToRemove: number | string): number[] | string[] {
+  let i: number = arr.indexOf(valueToRemove)
+  return (arr.slice(0, i)).concat(arr.slice(i + 1, arr.length))
+}
 
 const numbers = [1, 2, 3];
 const names = ["John", "Alice", "Ellen"];

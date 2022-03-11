@@ -4,8 +4,17 @@ export {};
  * Loop over the array and for each alive writer print out the following:
  * "Hi, my name is {firstName} {lastName}. I am {age} years old, and work as a {occupation}."
  */
+ interface writerObj {
+  [i: number]: {
+    firstName: string,
+    lastName: string,
+    occupation: string,
+    age: number,
+    alive: boolean
+  };
+}
 
-const writers = [
+const writers: writerObj = [
   {
     firstName: "Virginia",
     lastName: "Woolf",
@@ -36,6 +45,16 @@ const writers = [
   }
 ];
 
-function intro(arr: any[]) {
-  
+const capitalize = (word: string) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 }
+
+function intro(obj: writerObj): void {
+  for (let i = 0; i < Object.keys(obj).length; i++) {
+    if (obj[i].alive === true) {
+      console.log(`Hi, my name is ${capitalize(obj[i].firstName)} ${capitalize(obj[i].lastName)}. I am ${obj[i].age} years old, and work as a ${obj[i].occupation}.`)
+    } 
+  }
+}
+
+intro(writers)

@@ -10,11 +10,18 @@ export {};
  *  - https://www.youtube.com/watch?v=Pi3QC_fVaD0 (JavaScript this Keyword Explained In 3 Minutes)
  *  - https://www.youtube.com/watch?v=YOlr79NaAtQ (What is THIS in JavaScript? in 100 seconds)
  */
+interface forCircle {
+  this.radius: number
 
-function Circle(radius) {
+}
+function Circle(radius: number): forCircle {
   this.radius = radius;
-  this.area = function() {};
-  this.perimeter = function() {};
+  this.area = function() {
+    Math.PI * this.radius * this.radius
+  };
+  this.perimeter = function() {
+    2 * Math.PI * this.radius
+  };
 }
 
 const c = new Circle(3);

@@ -1,6 +1,12 @@
 export {};
-
-const library = [
+interface libraryObj {
+  [i: number]: {
+    title: string,
+    author: string,
+    isRead: boolean
+  };
+}
+const library: libraryObj = [
   {
     title: "Bill Gates",
     author: "The Road Ahead",
@@ -18,7 +24,15 @@ const library = [
   }
 ];
 
-const showStatus = () => {};
+const showStatus = (obj: libraryObj) => {
+  for (let i = 0; i < Object.keys(obj).length; i++) {
+    if (obj[i].isRead == true) {
+      console.log(`Already read '${obj[i].title}' by ${obj[i].author}.`)
+    } else {
+      console.log(`You still need to read '${obj[i].title}' by ${obj[i].author}.`)
+    }
+  }
+}
 
 showStatus(library);
 

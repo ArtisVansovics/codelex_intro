@@ -11,8 +11,9 @@ export {};
  */
 
 function draw(num: number) {
+    let star = "*"
     for (let i = 1; i < num + 1; i++) {
-        console.log("*");
+        console.log(star.repeat(i));
     }
 };
 

@@ -12,6 +12,15 @@
  * reverseInt(-90) === -9
  */
 
-function reverse(int: number) {}
+function reverse(int: number): number {
+    let lastDigit: number = 0
+    let result: number = 0
+    while(int) {
+        lastDigit = int % 10 // returns the last digit of the number
+        result = (result * 10) + lastDigit
+        int = int/10|0 // removes last digit and decimal values
+    }
+    return result
+}
 
 export { reverse };

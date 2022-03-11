@@ -13,9 +13,13 @@
  */
 
 class Queue {
-  add(n: number) {}
-
-  remove() {}
+  memory: number[] = []
+  add(n: number) {
+    this.memory.push(n)
+  }
+  remove() {
+    return this.memory.shift()
+  }
 }
 
 export { Queue };

@@ -15,11 +15,16 @@
  */
 
 class Stack {
-  push(n: number) {}
-
-  pop() {}
-
-  peek() {}
+  memory: number[] = []
+  push(n: number) {
+    this.memory.push(n)
+  }
+  pop() {
+    this.memory.pop()
+  }
+  peek() {
+    return this.memory[this.memory.length - 1]
+  }
 }
 
 export { Stack };

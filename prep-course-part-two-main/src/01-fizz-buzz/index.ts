@@ -16,11 +16,18 @@
  * console.log('buzz')
  */
 
-function fizzBuzz(n: number) {
-
-    console.log(`buzz`);
-    console.log(`fizz`);
-    console.log(`fizzbuzz`);
+function fizzBuzz(n: number){
+    for (let i = 1; i < n + 1; i++) {
+        if (i % 3 == 0 && i % 5 ==0) { // using modulus operator "%", which returns zero, if (num1 / num2) remainder equals 0
+            console.log(`fizzbuzz`)
+        } else if (i % 3 == 0) {
+            console.log(`fizz`)
+        } else if (i % 5 ==0) {
+            console.log(`buzz`)
+        } else {
+            console.log(i)
+        }
+}
 }
 
 export { fizzBuzz };
