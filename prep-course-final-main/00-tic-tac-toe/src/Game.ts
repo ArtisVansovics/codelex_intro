@@ -15,7 +15,7 @@ export class Game {
   
   player01: XO = 'X'
   player02: XO = 'O'
-
+  player03: XO = 'O'
   
 
   getTurn(): XO {
