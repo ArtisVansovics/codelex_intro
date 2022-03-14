@@ -12,8 +12,8 @@ export class Game {
   onClick(i: any): void {
     if (this.cells[i] === '-') {
       this.cells[i] = this.getTurn()
+      return console.log(`cell ${i} clicked`)
     }
-    console.log(`cell ${i} clicked`)
   }
   getWinner(): XO {
     // horizontal test
@@ -25,7 +25,7 @@ export class Game {
       return this.cells[6] 
     }
     // vertical test
-    else if (this.cells[0] === this.cells[3] && this.cells[0] === this.cells[6] && this.cells[0] !== '-') {
+      else if (this.cells[0] === this.cells[3] && this.cells[0] === this.cells[6] && this.cells[0] !== '-') {
       return this.cells[0]
     } else if (this.cells[1] === this.cells[4] && this.cells[1] === this.cells[7] && this.cells[1] !== '-') {
       return this.cells[1]
@@ -33,12 +33,12 @@ export class Game {
       return this.cells[2] 
     }
     // diagonal test
-    else if (this.cells[0] === this.cells[4] && this.cells[0] === this.cells[8] && this.cells[0] !== '-') {
+      else if (this.cells[0] === this.cells[4] && this.cells[0] === this.cells[8] && this.cells[0] !== '-') {
       return this.cells[0]
     } else if (this.cells[2] === this.cells[4] && this.cells[2] === this.cells[6] && this.cells[2] !== '-') {
       return this.cells[2] 
     }
-    else return '-'
+      else return '-'
     }
   
   isTie(): boolean {
@@ -54,10 +54,10 @@ export class Game {
 }
 
 /* 
-    [
-      0, 1, 2, 
-      3, 4, 5, 
-      6, 7, 8
-    ]
-  */
+  [
+    0, 1, 2, 
+    3, 4, 5, 
+    6, 7, 8
+  ]
+*/
 

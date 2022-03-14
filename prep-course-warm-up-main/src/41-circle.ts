@@ -10,25 +10,32 @@ export {};
  *  - https://www.youtube.com/watch?v=Pi3QC_fVaD0 (JavaScript this Keyword Explained In 3 Minutes)
  *  - https://www.youtube.com/watch?v=YOlr79NaAtQ (What is THIS in JavaScript? in 100 seconds)
  */
-interface forCircle {
-  this.radius: number
 
+// declaring a class but implementing it with a function
+declare class Circle {
+  constructor(radius: number) 
 }
-function Circle(radius: number): forCircle {
+
+function Circle(this: any, radius: number) {
   this.radius = radius;
   this.area = function() {
-    Math.PI * this.radius * this.radius
-  };
+    return (Math.PI * this.radius * this.radius).toFixed(2)
+  }
   this.perimeter = function() {
-    2 * Math.PI * this.radius
+    return (2 * Math.PI * this.radius).toFixed(2)
   };
 }
 
-const c = new Circle(3);
+const c:any = new Circle(3); // explicit type as any
 console.log("Area =", c.area()); // Expected output: Area = 28.27
 console.log("Perimeter =", c.perimeter()); // Expected output: Perimeter = 18.85
 
 
+
+
+function area() {
+  throw new Error("Function not implemented.");
+}
 /**
  * This was the last exercise in this repository.
  * Congratulations on getting this far!

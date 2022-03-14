@@ -16,6 +16,22 @@
  *              '#####'
  */
 
-function pyramid(n: number) {}
+function pyramid(n: number) {
+    for (let i = 0; i < n; i++) {
+        let line: string = ''
+        for (let j = 0; j < n - 1; j++) {
+            line += ' '
+        }
+        
+        for (let k = 0; k < i + 1; k++) {
+            line += '#'
+        }
+        
+        for (let l = 0; l < n - 1; l++) {
+            line += ' '
+        }
+        console.log(line)
+    }
+}
 
 export { pyramid };

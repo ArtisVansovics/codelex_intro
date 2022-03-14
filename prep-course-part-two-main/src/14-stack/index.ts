@@ -18,6 +18,7 @@ class Stack {
   memory: number[] = []
   push(n: number) {
     this.memory.push(n)
+    return this.memory
   }
   pop() {
     this.memory.pop()

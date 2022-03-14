@@ -22,4 +22,4 @@ const doubled = map(numbers, function(number) {
 });
 console.log(doubled); // Expected result: [2, 4, 6]
 
-// create epmty array, .concat the result of func() to previous results with for 
+// create epmty array, .concat the result of func() to previous results with for loop
