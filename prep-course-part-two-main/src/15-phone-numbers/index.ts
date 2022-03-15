@@ -28,10 +28,30 @@
  */
 
 class PhoneNumber {
-  constructor(input: string) {}
+  input: string;
+  constructor(input: string) {
+    this.input = input
+  }
 
-  number() {
-    return "";
+  number(): string | null {
+    const numberClean: string = this.input.replace(/[\s\.\(\)\-\+]/g, '')
+    if ((/[A-Za-z@:,!?]/g).test(numberClean)) { // tests if number includes punctuation or letters
+      return null
+    } else if (numberClean.length === 9 || numberClean.length === 12) {
+      return null
+    } else if (numberClean.length === 11 && numberClean.charAt(0) === '1') {
+      if (numberClean.charAt(1) === '0' || numberClean.charAt(1) === '1') {
+        return null
+      } else if (numberClean.charAt(4) === '0' || numberClean.charAt(4) === '1') {
+        return null
+      }
+      else return numberClean.replace('1', '')
+    } else if (numberClean.length === 11 && numberClean.charAt(0) !== '1') {
+      return null
+    } else if (numberClean.length === 10 && numberClean.charAt(0) === '1' || numberClean.charAt(0) === '0' || numberClean.charAt(3) === '1' || numberClean.charAt(3) === '0') {
+      return null
+    }
+    else return numberClean;
   }
 }
 

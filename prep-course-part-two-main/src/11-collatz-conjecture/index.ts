@@ -23,21 +23,22 @@
  */
 
 function steps(n: number): number {
-    let arr: number[] = []
-    if (n <= 0) {
-        throw new Error("Only positive numbers are allowed");
-    } else if (n = 1) {
-        return 0
-    } else {
-        for (let i = n; i <= 1; i--) {
-            if (i % 2 === 0) {
-                arr.push(i / 2)
+    let count: number = 0
+    if (n > 0) {
+        while (n !== 1) {
+            if (n % 2 === 0) {
+                n = n/2
+                count += 1
             } else {
-                arr.push(i * 3 + 1)
+                n = (3 * n) + 1
+                count += 1
             }
         }
-        return arr.length - 1
+        return count
+    } else {
+        throw new Error("Only positive numbers are allowed")
     }
 }
+
 
 export { steps };

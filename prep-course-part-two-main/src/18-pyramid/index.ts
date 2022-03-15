@@ -19,15 +19,16 @@
 function pyramid(n: number) {
     for (let i = 0; i < n; i++) {
         let line: string = ''
-        for (let j = 0; j < n - 1; j++) {
+        for (let j = 0; j < n - i - 1; j++) { // number of spaces decreases as i gets bigger
             line += ' '
         }
-        
-        for (let k = 0; k < i + 1; k++) {
+        for (let k = n; k < n + i; k++) { // always prints at least one #
             line += '#'
         }
-        
-        for (let l = 0; l < n - 1; l++) {
+        for (let l = n - 1; l < n + i; l++) {
+            line += '#'
+        }
+        for (let m = 0; m < n - i - 1; m++) {
             line += ' '
         }
         console.log(line)

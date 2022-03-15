@@ -10,7 +10,16 @@
  */
 
 class Words {
-  count(str: string) {}
+  count(str: string) {
+    const words: string[] = str.split(' ')
+    let output: any = {}
+    for (let i = 0; i < words.length; i++) {
+      let wordCount = output[words[i]]
+      let count = wordCount ? wordCount : 0
+      output[words[i]] = count + 1
+    }
+    return output
+  }
 }
 
 export { Words };

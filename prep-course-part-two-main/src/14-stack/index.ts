@@ -18,10 +18,9 @@ class Stack {
   memory: number[] = []
   push(n: number) {
     this.memory.push(n)
-    return this.memory
   }
   pop() {
-    this.memory.pop()
+    return this.memory.pop()
   }
   peek() {
     return this.memory[this.memory.length - 1]
